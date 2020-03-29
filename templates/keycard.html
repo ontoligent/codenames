@@ -20,10 +20,7 @@
         </tbody>
     </table>
     <div>
-        <!--
-        <tt>http://codenames.ontoligent.com/keycard/{{gridcode}}</tt>
-        -->
-        <a href="/keycard/{{gridcode}}" class="w3-button w3-green">Clone Me</a>
+        <a href="{{url_for('keycard')}}/{{gridcode}}" class="w3-button w3-green">Clone Me</a>
     </div>
 </div>
 {% endblock %}
