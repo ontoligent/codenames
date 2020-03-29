@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block main %}
+<div class="w3-container" id='grid-container'>
+    <div id='grid-title' class='{{team}}' style='color:{{team}};'>{{team}}</div>
+    <table id="grid">
+        <tbody>
+            {% for x in range(5) %}
+            <tr>
+                {% for y in range(5) %}
+                {% set ctype = grid.loc[(x,y)].card %}
+                <td class="{{ctype}} grid" align="center">
+                    {{x+1}} {{y+1}}
+                    {% if ctype == 'assassin' %}
+                    <i class="far fa-angry"></i>
+                    {% endif %}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <!--
+        <tt>http://codenames.ontoligent.com/keycard/{{gridcode}}</tt>
+        -->
+        <a href="/keycard/{{gridcode}}" class="w3-button w3-green">Clone Me</a>
+    </div>
+</div>
+{% endblock %}
+    
