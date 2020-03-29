@@ -12,7 +12,7 @@ data = {}
 
 @app.route('/')
 def index():
-    return 'hi'
+    return render_template('home.html')
     
 @app.route('/keycard')
 def keycard():
@@ -31,3 +31,6 @@ def clone_keycard(gridcode):
     data['team'] = kc.team
     data['gridcode'] = kc.gridcode
     return render_template('keycard.html', **data)
+
+if __name__ == '__main__':
+    app.run(debug=True)

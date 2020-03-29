@@ -1,11 +1,18 @@
+
 .red {background-color:red;}
 .blue {background-color:blue;}
 .neutral {background-color:lightgray;}
 .assassin {background-color:black;}
-td {
+
+div.col {
+    float: none;
+    margin: 0 auto;
+}
+
+/*
+.card {
     width: 128px;
     height: 128px;
-    /*border: 1px solid gray;*/
     text-align:center;
     font-size: 16pt;
     border-radius: 10px; 
@@ -30,3 +37,4 @@ td {
 #grid-title {
     background-color:white;
 }
+*/
