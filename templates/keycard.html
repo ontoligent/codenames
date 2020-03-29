@@ -7,14 +7,15 @@
     {% for y in range(5) %}
     {% set ctype = grid.loc[(x,y)].card %}
     <div class="col s2 m2 l1">
-        <p class="{{ctype}} lighten-1 card-panel white-text">
-            <!-- {{ x + 1 }} {{ y + 1 }} -->
-        </p>
+        <div class="{{ctype}} lighten-1 card-panel" style="text-align: center; color:white;">
+            {{ x + 1 }} {{ y + 1 }}
+        </div>
     </div>
     {% endfor %}
 </div>
 {% endfor %}
-<a class="btn waves-effect waves-light" href="{{url_for('keycard')}}/{{gridcode}}">
-    Send <i class="material-icons right">send</i>
-</a>
+<div>
+<p class="text">{{ gridcode }}</p>
+</div>
+
 {% endblock %}

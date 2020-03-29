@@ -1,6 +1,6 @@
 import os
 import sys
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from lib.codenames import KeyCard
 
 
@@ -18,10 +18,11 @@ def index():
 def keycard():
     kc = KeyCard()
     kc.draw_card()
-    data['grid'] = kc.grid
-    data['team'] = kc.team
+    # data['grid'] = kc.grid
+    # data['team'] = kc.team
     data['gridcode'] = kc.gridcode
-    return render_template('keycard.html', **data)
+    # return render_template('keycard.html', **data)
+    return redirect('/keycard/{}'.format(kc.gridcode))
     
 @app.route('/keycard/<gridcode>')
 def clone_keycard(gridcode):

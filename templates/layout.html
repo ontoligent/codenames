@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Codenames</title>
+        <title>Codenames {{ gridcode }}</title>
 
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
@@ -33,6 +33,7 @@
 
         <div id="footer" class="container" style="text-align:right;padding:1rem;">
             {% block footer %}
+            <a  href="/">HOME</a> |
             <span class="">&copy; 2018 Ontoligent Design</span>
             {% endblock %}
         </div>
