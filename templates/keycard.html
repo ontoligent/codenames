@@ -1,7 +1,13 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<h2 class="badge-info {{ team }}-text">{{team}}</h2>
+<div class="row">
+    <div class="col s5">
+        <p class="{{ team }}-text" style="text-align: center; font-size: x-large; font-weight: bold; margin: 0;">
+            {{ team }}
+        </p>
+    </div>
+</div>
 {% for x in range(5) %}
 <div class="row">
     {% for y in range(5) %}
@@ -15,8 +21,12 @@
     {% endfor %}
 </div>
 {% endfor %}
+    <!--
 <div>
 <p class="text">{{ gridcode }}</p>
 </div>
-
+    -->
+<div class="row">
+<a class="btn" style="float:right;" href="/">HOME</a>
+</div>
 {% endblock %}
