@@ -2,6 +2,22 @@ import pandas as pd
 import numpy as np
 import random
 
+class NameCards():
+
+    names_file = 'lib/words.txt'
+
+    def __init__(self):
+        self.names = open(self.names_file, 'r').readlines()
+        self.grid = pd.DataFrame(index=pd.MultiIndex.from_product(
+            [range(5), range(5)])
+        )
+
+    def draw_cards(self, n=25):
+        self.cards = random.sample(self.names, n)
+        random.shuffle(self.cards) # For good measure
+        self.grid['card'] = self.cards
+
+
 class KeyCard():
 
     params = {
