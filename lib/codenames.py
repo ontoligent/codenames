@@ -4,7 +4,7 @@ import random
 
 class NameCards():
 
-    names_file = 'lib/words.txt'
+    names_file = 'lib/words2.txt'
 
     def __init__(self):
         self.names = open(self.names_file, 'r').readlines()
@@ -16,6 +16,11 @@ class NameCards():
         self.cards = random.sample(self.names, n)
         random.shuffle(self.cards) # For good measure
         self.grid['card'] = self.cards
+        self.cardlist = '_'.join([card.strip().upper() for card in self.cards])
+
+    def clone_cards(self, cardlist):
+        self.grid['card'] = cardlist.split('_')
+        self.cardlist = cardlist
 
 
 class KeyCard():

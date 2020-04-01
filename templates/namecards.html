@@ -7,22 +7,32 @@
     {% for y in range(5) %}
     {% set name = grid.loc[(x,y)].card %}
     <div class="col s2 m2 l2">
-        <div class="card-panel" style="text-align: center; width:100%;"
+        <div id="cell-{{ x+1 }}-{{ y+1 }}" class="card-panel"
+             style="text-align: center; width:100%; background-color: #CCFF99;"
              title="{{ name | upper }}: {{ x + 1 }} {{ y + 1 }}">
-            <p class=""><b>{{ name | upper }}</b></p>
+            <p><b>{{ name | upper }}</b></p>
         </div>
     </div>
     {% endfor %}
 </div>
 {% endfor %}
 
-<a class="btn waves-effect waves-light" href="keycard" target="_blank">
-    Generate keycard
-    <i class="material-icons right">send</i>
-</a>
+<div class="row">
+    <p class="flow-text">
+        Share <a href="{{ request.base_url }}">this board</a> with other players.
+    </p>
+    <p class="flow-text">
+        Spymasters: Create a <a href="/spymaster/{{ cardlist }}" target="_blank">keycard</a> for this board. Pick a spymster to do this and share resulting page with other spymaster(s). Do this only once per game.
+    </p>
+    <p class="flow-text">
+        Confirmation code: <code style="color:green;">{{ hash }}</code>
+    </p>
+</div>
 
+    <!--
 <div class="row">
     <a class="btn" style="float:right;" href="/">HOME</a>
 </div>
+    -->
 
 {% endblock %}

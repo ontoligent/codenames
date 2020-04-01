@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+{% for x in range(5) %}
+<div class="row">
+    {% for y in range(5) %}
+    {% set name = cardgrid.loc[(x,y)].card %}
+    {% set ctype = keygrid.loc[(x,y)].card %}
+    <div class="col s2 m2 l2">
+        <div id="cell-{{ x+1 }}-{{ y+1 }}" class="card-panel {{ ctype }}"
+             style="text-align: center; width:100%;"
+             title="Card at ({{ x + 1 }}, {{ y + 1 }}) is {{ name | upper }} and belongs to {{ ctype }} ">
+            <p>
+                <b style="color:white;">{{ name | upper }}</b>
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+
+<div class="row">
+    <p class="flow-text">
+        Share <a href="{{ request.base_url }}">this board</a> with other spymasters.</p>
+    <p class="flow-text">
+        Confirmation code: <code style="color:green;">{{ hash }}</code>
+    </p>
+</div>
+
+{% endblock %}

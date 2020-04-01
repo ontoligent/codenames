@@ -4,9 +4,9 @@
 
 <div class="row">
     <div class="col s5">
-        <p class="{{ team }}-text" style="text-align: center; font-size: x-large; font-weight: bold; margin: 0;">
+        <h2 class="{{ team }}-text">
             {{ team }}
-        </p>
+        </h2>
     </div>
 </div>
 
@@ -15,9 +15,10 @@
     {% for y in range(5) %}
     {% set ctype = grid.loc[(x,y)].card %}
     <div class="col s2 m2 l2">
-        <div class="{{ ctype }} lighten-1 card-panel" style="text-align: center; color:white;"
+        <div id="cell-{{ x+1 }}-{{ y+1 }}" class="{{ ctype }} lighten-1 card-panel"
+             style="width: 100%; text-align: center; color:white;"
              title="{{ ctype | upper }}: {{ x + 1 }} {{ y + 1 }}">
-            <!-- {{ x + 1 }} {{ y + 1 }} -->
+            <p><b>{{ ctype | upper }}</b></p>
             &nbsp;
         </div>
     </div>
@@ -26,10 +27,7 @@
 {% endfor %}
 
 <div class="row">
-    <p class="flow-text">Share this link with the other spymaster(s): <br/>{{ request.base_url }}</p>
+    <p class="flow-text">Share <a href="{{ request.base_url }}">this keycard</a> with the other spymaster(s). Pick a spymster to do this and share resulting page with other spymaster(s). Do this only once per game.</p>
 </div>
 
-<div class="row">
-    <a class="btn" style="float:right;" href="/">HOME</a>
-</div>
 {% endblock %}
