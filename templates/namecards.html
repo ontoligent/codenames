@@ -2,20 +2,22 @@
 
 {% block main %}
 
-{% for x in range(5) %}
-<div class="row">
-    {% for y in range(5) %}
-    {% set name = grid.loc[(x,y)].card %}
-    <div class="col s2 m2 l2">
-        <div id="cell-{{ x+1 }}-{{ y+1 }}" class="card-panel"
-             style="text-align: center; width:100%; background-color: #CCFF99;"
-             title="{{ name | upper }}: {{ x + 1 }} {{ y + 1 }}">
-            <p><b>{{ name | upper }}</b></p>
+<div id="gameboard">
+    {% for x in range(5) %}
+    <div class="row">
+        {% for y in range(5) %}
+        {% set name = grid.loc[(x,y)].card %}
+        <div class="col s2 m2 l2">
+            <div id="cell-{{ x + 1 }}-{{ y + 1 }}" class="card-panel"
+                 style="text-align: center; width:100%; background-color: #CCFF99;"
+                 title="{{ name | upper }}: {{ x + 1 }} {{ y + 1 }}">
+                <p><b>{{ name | upper }}</b></p>
+            </div>
         </div>
+        {% endfor %}
     </div>
     {% endfor %}
 </div>
-{% endfor %}
 
 <div class="row">
     <p class="flow-text">

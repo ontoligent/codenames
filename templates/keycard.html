@@ -10,24 +10,28 @@
     </div>
 </div>
 
-{% for x in range(5) %}
-<div class="row">
-    {% for y in range(5) %}
-    {% set ctype = grid.loc[(x,y)].card %}
-    <div class="col s2 m2 l2">
-        <div id="cell-{{ x+1 }}-{{ y+1 }}" class="{{ ctype }} lighten-1 card-panel"
-             style="width: 100%; text-align: center; color:white;"
-             title="{{ ctype | upper }}: {{ x + 1 }} {{ y + 1 }}">
-            <p><b>{{ ctype | upper }}</b></p>
-            &nbsp;
+<div id="gameboard">
+    {% for x in range(5) %}
+    <div class="row">
+        {% for y in range(5) %}
+        {% set ctype = grid.loc[(x,y)].card %}
+        <div class="col s2 m2 l2">
+            <div id="cell-{{ x + 1 }}-{{ y + 1 }}" class="{{ ctype }} lighten-1 card-panel"
+                 style="width: 100%; text-align: center; color:white;"
+                 title="{{ ctype | upper }}: {{ x + 1 }} {{ y + 1 }}">
+                <p><b>{{ ctype | upper }}</b></p>
+            </div>
         </div>
+        {% endfor %}
     </div>
     {% endfor %}
 </div>
-{% endfor %}
 
 <div class="row">
     <p class="flow-text">Share <a href="{{ request.base_url }}">this keycard</a> with the other spymaster(s). Pick a spymster to do this and share resulting page with other spymaster(s). Do this only once per game.</p>
+    <p class="flow-text">
+        Confirmation code: <code style="color:green;">{{ hash }}</code>
+    </p>
 </div>
 
 {% endblock %}

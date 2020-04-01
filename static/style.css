@@ -9,6 +9,9 @@ div.col {
     margin: 0 auto;
 }
 
+#gameboard .row {
+    margin-bottom: 0;
+}
 /*
 .card {
     width: 128px;
