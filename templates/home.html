@@ -1,40 +1,42 @@
 {% extends "layout.html" %}
 {% block main %}
-<h1>Codenames</h1>
+<h1>Codenames for Zoom</h1>
 
-    <div class="row">
-        <div class="col s12 m12 l6">
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">Blended Mode</span>
-                    <p class="">Choose this option if you just want to create a keycard.
-                            For example, you may be sharing a real gameboard by Zoom,
-                            and you want to share a keycard in a secure way.</p>
-                </div>
-                <div class="card-action">
-                    <a class="" href="keycard" target="_blank">
-                        Generate keycard
-                        <i class="material-icons right">send</i>
-                    </a>
-                </div>
+    <p class="flow-text">This app is designed to support playing Codenames over Zoom. The basic idea is to use Zoom screen sharing to share a the board. There are two ways to play. The first way, called <strong>blended mode</strong>, involves using a document camera (or other video device) to capture a real game board from one player, who manages the placement of cards. This app then provides a unique keycard that can be shared among the spymasters, since sharing the actual keycards is hard to do. The second way, called <strong>online mode</strong>, involves using a board created by this app as well as a keycard that can be shared by spymasters. In online mode, the gameboard is also shared using screen sharing. The process of sharing keycards is explained on the keycards pages.</p>
+
+<div class="row">
+    <div class="col s12 l6">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Blended Mode</span>
+                <p class="">Choose this option if you just want to create a keycard.
+                        For example, you may be sharing a real gameboard by Zoom,
+                        and you want to share a keycard in a secure way.</p>
             </div>
-        </div>
-        <div class="col s6">
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">Online Mode</span>
-                    <p class="">Choose this option if you want to play a game online.
-                            This will create a gameboard that can be shared with all players, along with
-                    a link to generate a keycard for that game.</p>
-                </div>
-                <div class="card-action">
-                    <a class="" href="namecards" target="_blank">
-                        Generate new game<i class="material-icons right">send</i>
-                    </a>
-                </div>
+            <div class="card-action">
+                <a class="" href="keycard" target="_blank">
+                    Generate keycard
+                    <i class="material-icons right">send</i>
+                </a>
             </div>
         </div>
     </div>
+    <div class="col s12 l6">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Online Mode</span>
+                <p class="">Choose this option if you want to play a game online.
+                        This will create a gameboard that can be shared with all players, along with
+                a link to generate a keycard for that game.</p>
+            </div>
+            <div class="card-action">
+                <a class="" href="namecards" target="_blank">
+                    Generate new game<i class="material-icons right">send</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
